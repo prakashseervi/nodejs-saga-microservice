@@ -1,14 +1,12 @@
-const paymentCompleted = require('./paymentCompleted');
-const EventHandler= (message) => {
+const paymentCompleted = require("./paymentCompleted");
+module.exports = (message) => {
+  console.log("aaaaaaayayay---message.type", message.topic);
+  switch (message.topic) {
+    case "ORDER_PAYMENT_COMPLETED":
+      paymentCompleted(message);
+      break;
 
-    switch(message.type){
-        case 'ORDER_PAYMENT_COMPLETED':
-            paymentCompleted(message);
-            break;
-                 
-        default:
-            break;    
-
-    }
-            
-}
+    default:
+      break;
+  }
+};

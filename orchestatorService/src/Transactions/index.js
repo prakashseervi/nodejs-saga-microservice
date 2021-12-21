@@ -1,14 +1,13 @@
-const OrderCreationTransactions = require('./orderCreationTransactions');
+const OrderCreationTransactions = require("./orderCreationTransactions");
 const Transactions = (message) => {
-    switch(message.topic) {
-        case 'ORDER_CREATION_TRANSACTIONS':
-            OrderCreationTransactions(message);
-            break;
+  switch (message.topic) {
+    case "ORDER_CREATION_TRANSACTIONS":
+      OrderCreationTransactions(message);
+      break;
 
-        default:
-            break;    
-
-    }
-}
+    default:
+      break;
+  }
+};
 
 module.exports = Transactions;
